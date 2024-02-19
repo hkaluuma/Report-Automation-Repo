@@ -112,7 +112,7 @@ def generate_and_save_graph(dataframe, name):
 def send_email():
     # Email configuration
     sender_email = 'academysupport@idi.co.ug'
-    receiver_emails = 'hkaluuma@idi.co.ug'
+    receiver_emails = 'hkaluuma@idi.co.ug, smagembe@idi.co.ug, fmusinguzi@idi.co.ug'
     subject = 'Automated PACT Weekly Report'
     body = 'Please find attached the PACT weekly report data.'
 
