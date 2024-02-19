@@ -16,6 +16,10 @@ queries = [
      "WHERE p.creationDate BETWEEN '2020-09-30 00:00:01' AND '2024-02-06 23:59:59' "
      "AND c.name <> 'TB clinic' GROUP BY c.name"),
     # Add more queries here if needed
+    ("SELECT count(p.id) AS Registered_Patients, c.name AS Facility "
+     "FROM cfl_patients p INNER JOIN cfl_clinics c ON c.id = p.clinic_id_OID "
+     "where p.creationDate between '2020-09-30 00:00:01' and '2024-02-08 23:59:59' "
+     "AND p.status = 'ACTIVE' AND c.name <> 'TB clinic' group by c.name"),
 ]
 
 # Establish a connection to the MySQL database
@@ -39,7 +43,7 @@ try:
     connection.close()
 
     # Save the Excel file
-    excel_writer.save()
+    excel_writer.close()
 
     print("Data has been successfully exported to output_data.xlsx")
 
